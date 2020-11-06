@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PARSEC
+	bool "parsec"
+	default y
+	help
+		Parsec-3.0 Benchmarks.
