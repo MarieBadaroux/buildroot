@@ -14,14 +14,3 @@ for bin in $(find ${PARSEC_HOME} -type f -executable | xargs file | grep RISC-V 
 do
 	cp ${bin} ./bin/
 done
-
-for dir in $(find ${PARSEC_HOME} -name input_sim\*.tar | sed -e "s+${PARSEC_HOME}/*++" | xargs dirname)
-do
-	cd ${PARSEC_HOME}/${dir}
-	for size in small large
-		do
-			tar xf input_sim${size}.tar
-		done
-done
-
-cd /work/marie/buildroot/package/parsec
